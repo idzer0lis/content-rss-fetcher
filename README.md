@@ -11,9 +11,3 @@ $article = $involvery->filterContent('<article id="', 'article>');
 var_dump($article);
 
 ```
-
-
-    
-#### To do
--Improve docs
--Code more
