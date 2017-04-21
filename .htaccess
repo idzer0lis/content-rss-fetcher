@@ -1,0 +1,12 @@
+RewriteEngine on
+
+# prevent endless loop
+RewriteCond %{ENV:REDIRECT_STATUS} 200
+RewriteRule ^ - [L]
+
+# redirect to pretty url
+RewriteCond %{QUERY_STRING} blog=(.+)
+RewriteRule ^blog.php$ /blog/%1? [R,L]
+
+# serve real content
+RewriteRule ^blog/(.+)$ /single-blog.php
